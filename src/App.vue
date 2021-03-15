@@ -1,5 +1,6 @@
 <template>
   <!-- <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/> -->
+  <div :class='App'>
   <Navbar/>
   <Banner/>
   <About/>
@@ -7,6 +8,7 @@
   <OpenPositions/>
   <Team/>
   <Footer/>
+  </div>
 </template>
 
 <script lang="ts">
@@ -33,16 +35,21 @@ export default defineComponent({
     Team,
     Footer,
   },
+  data() {
+    return {
+      // App: 'border-2 border-red-500'
+    }
+  }
 });
 </script>
 
 <style>
-#app {
+/* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
+} */
 </style>

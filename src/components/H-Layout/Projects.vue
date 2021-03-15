@@ -1,5 +1,7 @@
 <template>
-  <div>Projects</div>
+  <div :class='ProjectsContainer'>
+    <!-- use grid to map through project list form DB -->
+  </div>
 </template>
 
 <script>
