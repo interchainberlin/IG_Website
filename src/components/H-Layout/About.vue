@@ -1,11 +1,11 @@
 <template>
   <div :class='AboutContainer'>
-    <div>
-      <h3 :class='header'> At Interchain GmbH, </h3>
+    <div :class='Content'>
+      <h3 :class='subheader'> At Interchain GmbH, </h3>
       <hr/>
       <p :class='body'> We are responsible for stewarding some of the most foundational infrastructure for blockchain ecosystems. Our work helps secure billions of dollars in value across a variety of major blockchain projects, including Cosmos, and we are pioneering new protocols for interoperability across the entire blockchain ecosystem. Our vision is to create a new interconnected ecosystem, a new internet of blockchains: The Interchain.</p>
     </div>
-    <div>
+    <div :class='Content'>
       <p :class='body'>Our products include Tendermint Core, a groundbreaking, Byzantine-fault tolerant consensus protocol; the Inter Blockchain Communication protocol, a reliable, ordered, authenticated cross-ledger data transport protocol; and Gaia, the software that powers the Cosmos Hub.</p>
     </div>
   </div>
@@ -16,5 +16,13 @@ import { defineComponent } from '@vue/composition-api'
 
 export default defineComponent({
   name: 'About',
+  data() {
+    return {
+      AboutContainer: 'p-2 flex flex-wrap justify-between items-center my-40',
+      Content: 'w-2/5 space-y-5',
+      subheader: 'text-4xl',
+      body: 'text-base', 
+    }
+  }
 })
 </script>
