@@ -56,9 +56,9 @@ export default defineComponent({
   name: 'Team',
   data() {
     return {
-      TeamContainer: 'p-2 flex flex-col flex-wrap my-40',
+      TeamContainer: 'p-2 flex flex-col flex-wrap my-40 space-y-5',
       TeamList: 'grid grid-cols-3 gap-10 my-10 ...',
-      Card: 'hover:border-blue-400 flex flex-wrap',
+      Card: 'hover:border hover:border-solid-blue flex flex-wrap',
       Profile: 'bg-gray-50 w-28',
       Info: 'w-3/5 px-5',
 
