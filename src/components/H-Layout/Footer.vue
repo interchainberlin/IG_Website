@@ -2,12 +2,12 @@
   <div :class='FooterContainer'>
     <div :class='SocailMedia'>
       <div :class='Content + Discord'>
-        <!-- <img /> -->
+        <img :class='Icon' src='https://www.freepnglogos.com/uploads/discord-logo-png/seven-kingdoms-9.png' alt='Discord Logo'/>
         <p :class='body1'>Be part of the journey</p>
         <p :class='body2'>Join our Discord community <br/> to shape the future</p>
       </div>
        <div :class='Content + Twitter'>
-        <!-- <img /> -->
+        <img :class='Icon' src='https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-4.png' alt='Discord Logo'/>
         <p :class='body1'>Stay up to date</p>
         <p :class='body2'>Follow @Interchain_io to get <br/> the latest updates. </p>
       </div>
@@ -27,7 +27,7 @@
         </div>
         <div :class='Newsletter'>
           <!-- Import Newsleter <script/> -->
-          Newsletter
+          Newsletter coming soon
         </div>
       </div>
     </div>
@@ -43,7 +43,8 @@ export default defineComponent({
     return {
       FooterContainer: 'bg-black text-white ...',
       SocailMedia: 'flex flex-wrap justify-center items-center text-center',
-      Content: 'p-20 w-1/2 border-r border-gray-500 ',
+      Icon: 'w-8 mb-5',
+      Content: 'p-20 w-1/2 border-r border-gray-500 flex flex-col flex-wrap justify-center items-center content-center space-y-6',
       Info: 'p-20',
       InfoContainer: 'xl:container xl:mx-auto p-2 flex flex-wrap justify-between',
 
