@@ -27,7 +27,7 @@
         </div>
         <div :class='Contact'>
           <p :class='body2'>Questions? Get in touch at</p>
-          <p :class='link'>contact@interchain.berlin</p>
+          <a :class='link' href='mailto:contact@interchain.berlin'>contact@interchain.berlin</a>
         </div>
         <div :class='Newsletter'>
           <!-- Import Newsleter <script/> -->
@@ -54,7 +54,7 @@ export default defineComponent({
 
       body1: 'font-bold',
       body2: 'font-light',
-      link: 'text-blue-500', 
+      link: 'font-bold text-blue-500', 
 
     }
   }
