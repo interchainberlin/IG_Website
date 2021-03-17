@@ -2,8 +2,7 @@
   <div :class='App'>
     <Navbar />
     <div :class='AppContainer'>
-      <!-- <Banner :projects='projects' /> -->
-      <BannerMobile :projects='projects' />
+      <Banner :projects='projects' />
       <Updates />
       <About />
       <Projects :projects='projects' />
@@ -20,8 +19,7 @@ import { defineComponent } from 'vue';
 import axios from 'axios';
 
 import Navbar from './components/Navigation/Navbar.vue';
-// import Banner from './components/Banner.vue';
-import BannerMobile from './components/Banners/BannerMobile.vue';
+import Banner from './components/Banners/Banner.vue';
 import Updates from './components/Updates.vue';
 import About from './components/About.vue';
 import Projects from './components/Projects.vue'; 
@@ -51,8 +49,7 @@ export default defineComponent({
   name: 'App',
   components: {
     Navbar,
-    // Banner,
-    BannerMobile,
+    Banner,
     Updates,
     About,
     Projects,
