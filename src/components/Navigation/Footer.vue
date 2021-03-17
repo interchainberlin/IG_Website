@@ -2,7 +2,7 @@
   <div :class='FooterContainer'>
     <div :class='SocailMedia'>
       <div :class='Content + Discord'>
-        <a href=''  target='_blank'>
+        <a href='https://discord.com/invite/vcExX9T'  target='_blank'>
           <img :class='Icon' src='https://www.freepnglogos.com/uploads/discord-logo-png/seven-kingdoms-9.png' alt='Discord Logo'/>
         </a>
         <p :class='body1'>Be part of the journey</p>
