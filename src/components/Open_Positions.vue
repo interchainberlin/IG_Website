@@ -22,7 +22,7 @@
             <p>{{job.Position}}</p>
             <p>{{job.Location}}</p>
           </span>
-          <a :class='link' :href='job.Apply'> Apply → </a>
+          <a :class='link' :href='job.Apply' target='_blank'> Apply → </a>
         </div>
         <br/>
         <hr/>
