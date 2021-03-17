@@ -7,7 +7,8 @@
       <div :class='TeamList'>
         <div :class='Card' v-for='team in teams' :key='team.id'>
           <!-- <img :class='Profile' :src='apiUrl + team.Profile[0].url'> -->
-          <img :class='Profile' src='../../assets/User.png'>
+          <!-- <img :class='Profile' src='../../assets/User.png'> -->
+          <img :class='Profile' :src='team.ProfileURL'/>
           <div :class='Info'>
             <p :class='body1'>{{team.FirstName}} {{team.LastName}}</p>
             <p :class='body2'>{{team.Role}}</p>

@@ -6,7 +6,7 @@
           <img :class='Icon' src='../../assets/Logo.svg'/>
           <p :class='header'>Interchain GmbH</p>
         </div>
-        <div :class='Container'>
+        <div :class='Container + ContainerMobile'>
           <p :class='subheader'>Team</p>
           <a href='https://github.com/interchainberlin' target='_blank' >
             <img :class='Icon' src='../../assets/GithubGray.png'/>
@@ -44,7 +44,8 @@ export default defineComponent({
 
       IGNav: 'bg-gray-800',
       IGContainer: 'xl:container xl:mx-auto p-2 flex flex-wrap justify-between items-center',
-      Container: 'flex flex-wrap items-center space-x-6',
+      ContainerMobile: 'invisible',
+      Container: 'md:visible flex flex-wrap items-center space-x-6 ',
       Icon: 'w-7 rounded-full', 
       ICFBanner: 'bg-black',
       ICFContainer: 'xl:container xl:mx-auto p-2',

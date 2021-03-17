@@ -1,5 +1,5 @@
 <template>
-  <div :class='AboutContainer'>
+  <div :class='AboutContainerMobile + AboutContainerWeb'>
     <div :class='Content'>
       <h3 :class='subheader'> At Interchain GmbH, </h3>
       <hr/>
@@ -18,8 +18,9 @@ export default defineComponent({
   name: 'About',
   data() {
     return {
-      AboutContainer: 'p-2 flex flex-wrap justify-between items-center my-40',
-      Content: 'w-2/5 space-y-5',
+      AboutContainerMobile: 'flex flex-wrap flex-col space-y-5 ',
+      AboutContainerWeb: 'md:flex-row justify-between items-center p-2 my-40',
+      Content: 'w-full md:w-2/5 space-y-5',
       subheader: 'text-4xl',
       body: 'text-base', 
     }

@@ -8,7 +8,8 @@
         <div :class='Card' v-for='project in projects' :key='project.id'>
           <a :class='Tag + TagGradient' :href='project.URL' target='_blank'>{{project.Title}} →</a>
           <div :class='Info'>
-            <img :class='Icon' :src='apiUrl + project.Icon[0].url' :alt='project.Icon[0].alternativeText' />
+            <!-- <img :class='Icon' :src='apiUrl + project.Icon[0].url' :alt='project.Icon[0].alternativeText' /> -->
+            <img :class='Icon' :src='project.IconURL'/>
             <p :class='body2'>{{project.Description}}</p>
           </div>
         </div>
@@ -33,7 +34,7 @@ export default defineComponent({
       TagGradient: 'hover:bg-gradient-to-r hover:from-gray-800 hover:to-gray-300',
       Profile: 'bg-gray-50 w-28',
       Info: 'space-y-10 p-8',
-      Icon: 'w-10',
+      Icon: 'w-10 rounded-full',
 
 
       subheader: 'text-4xl',

@@ -1,35 +1,59 @@
 <template>
   <div :class='App'>
-    <Navbar/>
+    <Navbar />
     <div :class='AppContainer'>
-      <Banner :projects='projects' />
-      <About/>
+      <!-- <Banner :projects='projects' /> -->
+      <BannerMobile :projects='projects' />
+      <Updates />
+      <About />
       <Projects :projects='projects' />
       <OpenPositions :jobs='jobs' />
       <Team :teams='teams' />
     </div>
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
 <script lang="ts">
+import Vue from 'vue'
 import { defineComponent } from 'vue';
 import axios from 'axios';
 
 import Navbar from './components/H-Layout/Navbar.vue';
-import Banner from './components/H-Layout/Banner.vue';
+// import Banner from './components/H-Layout/Banner.vue';
+import BannerMobile from './components/H-Layout/BannerMobile.vue';
+import Updates from './components/H-Layout/Updates.vue';
 import About from './components/H-Layout/About.vue';
 import Projects from './components/H-Layout/Projects.vue'; 
 import OpenPositions from './components/H-Layout/Open_Positions.vue';
 import Team from './components/H-Layout/Team.vue'; 
-import Footer from './components/H-Layout/Footer.vue'; 
+import Footer from './components/H-Layout/Footer.vue';
 
+// How do I set up media queries? 
+
+/* 
+// import VueMq from 'vue-mq';
+const VueMq = require('vue-mq');
+import { MediaQueries } from 'plugins/mediaqueries';
+
+const breakpoints = {
+    mobile: 450,
+    tablet: 900,
+    laptop: 1250,
+    desktop: Infinity,
+  }
+
+Vue.use(MediaQueries, { breakpoints })
+
+*/
 
 export default defineComponent({
   name: 'App',
   components: {
     Navbar,
-    Banner,
+    // Banner,
+    BannerMobile,
+    Updates,
     About,
     Projects,
     OpenPositions,
@@ -44,6 +68,7 @@ export default defineComponent({
       jobs: [],
       teams: [],
       error: 'value not found',
+      
     }
   },
   async mounted () {
