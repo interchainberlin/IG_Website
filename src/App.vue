@@ -14,7 +14,6 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
 import { defineComponent } from 'vue';
 import axios from 'axios';
 
@@ -26,23 +25,6 @@ import Projects from './components/Projects.vue';
 import OpenPositions from './components/Open_Positions.vue';
 import Team from './components/Team.vue'; 
 import Footer from './components/Navigation/Footer.vue';
-
-/* How do I set up media queries?
-
-// import VueMq from 'vue-mq'; // or 
-// const VueMq = require('vue-mq');
-import { MediaQueries } from 'plugins/mediaqueries';
-
-const breakpoints = {
-    mobile: 450,
-    tablet: 900,
-    laptop: 1250,
-    desktop: Infinity,
-  }
-
-Vue.use(MediaQueries, { breakpoints })
-
-*/
 
 export default defineComponent({
   name: 'App',
@@ -60,6 +42,8 @@ export default defineComponent({
     return {
       App: 'w-screen',
       AppContainer: 'xl:container xl:mx-auto p-5',
+
+      VUE_APP_API_URL: process.env.VUE_APP_API_URL,
       projects: [], 
       jobs: [],
       teams: [],
@@ -69,13 +53,13 @@ export default defineComponent({
   },
   async mounted () {
     try {
-      const getProjects = await axios.get('http://localhost:1337/projects')
+      const getProjects = await axios.get(`${this.VUE_APP_API_URL}/projects`)
       this.projects = getProjects.data
 
-      const getJobs = await axios.get('http://localhost:1337/jobs')
+      const getJobs = await axios.get(`${this.VUE_APP_API_URL}/jobs`)
       this.jobs = getJobs.data
 
-      const getTeams = await axios.get('http://localhost:1337/teams')
+      const getTeams = await axios.get(`${this.VUE_APP_API_URL}/teams`)
       this.teams = getTeams.data
 
     } catch (error) {
