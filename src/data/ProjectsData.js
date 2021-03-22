@@ -105,7 +105,8 @@ export const ProjectsData = [
   },
   {
   id: 3,
-  Title: "Inter-Blockchain Communication",
+  // Title: "Inter-Blockchain Communication",
+  Title: "IBC",
   IconURL: "https://dl.airtable.com/.attachmentThumbnails/2c60f887598c9deda4dcf963ba292967/6e3ebf91",
   URL: "https://ibcprotocol.org/",
   Description: "STARGATE - The Internet of Blockchains is on the horizon Stargate is a set of upgrades that complete the original roadmap laid out in the Cosmos Whitepaper. For the first time ever, Cosmos blockchains will be able to connect with each other using the first standardized protocol for inter-blockchain communication (IBC). ",
