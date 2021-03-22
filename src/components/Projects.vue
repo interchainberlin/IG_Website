@@ -45,7 +45,7 @@ export default defineComponent({
       Profile: 'bg-gray-50 w-28',
       Info: 'space-y-10 p-8',
       Icons: 'flex flex-wrap space-x-5',
-      Icon: 'w-7 rounded-full',
+      Icon: 'w-7 h-7 rounded-full',
 
 
       subheader: 'text-4xl',
