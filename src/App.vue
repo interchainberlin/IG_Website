@@ -44,7 +44,7 @@ export default defineComponent({
       AppContainer: 'xl:container xl:mx-auto p-5',
 
       // VUE_APP_API_URL: process.env.VUE_APP_API_URL,
-      VUE_APP_API_URL: 'http://142.93.205.67'
+      VUE_APP_API_URL: 'http://142.93.205.67',
       projects: [], 
       jobs: [],
       teams: [],
