@@ -8,7 +8,7 @@
   <h3> Interchain GmbH Website </h3>
   
   <br/>
-    <a href="https://naughty-roentgen-335a9c.netlify.app/"> Visit Website </a>
+    <a href="https://interchain-berlin-v1.netlify.app/"> Visit Website </a>
   <br/>
 </div>
 
@@ -21,7 +21,7 @@
 
 <br/>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/79d57511-d9a7-4709-ac94-24fa7e38de11/deploy-status)](https://app.netlify.com/sites/naughty-roentgen-335a9c/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/79d57511-d9a7-4709-ac94-24fa7e38de11/deploy-status)](https://interchain-berlin-v1.netlify.app/deploys)
 
 ## Build Setup
 
