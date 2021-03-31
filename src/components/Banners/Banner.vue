@@ -8,8 +8,8 @@
         <p>We are the maintainers of — </p>
         <div :class='BannerProject'>
           <!-- Map through projects from projects API --> 
-          <!-- <div v-for='project in projects' :key='project.id'> -->
-          <div :class='ProjectLinks' v-for='project in ProjectsData' :key='project.id'>
+          <div v-for='project in projects' :key='project.id'>
+          <!-- <div :class='ProjectLinks' v-for='project in ProjectsData' :key='project.id'> -->
             <a :class='link' :href='project.URL' target='_blank'>
               <img :class='Icon' :src='project.IconURL'/>
               <p>{{project.Title}}</p>

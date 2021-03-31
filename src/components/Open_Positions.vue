@@ -16,8 +16,8 @@
       <p :class='bodyBold'>Open positions</p>
       <hr/>
       <!-- Map through open roles from jobs API -->
-      <!-- <div :class='Roles' v-for='job in jobs' :key='job.id'> -->
-      <div :class='Roles' v-for='job in JobsData' :key='job.id'>
+      <div :class='Roles' v-for='job in jobs' :key='job.id'>
+      <!-- <div :class='Roles' v-for='job in JobsData' :key='job.id'> -->
         <div :class='Role + RoleHover'>
           <span>
             <p>{{job.Position}}</p>

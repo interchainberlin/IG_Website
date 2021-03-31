@@ -5,8 +5,8 @@
      <br/>
     <!-- Map through projects from projects API -->
       <div :class='ProjectList'>
-        <!-- <div :class='Card' v-for='project in projects' :key='project.id'> -->
-        <div :class='Card' v-for='project in ProjectsData' :key='project.id'>
+        <div :class='Card' v-for='project in projects' :key='project.id'>
+        <!-- <div :class='Card' v-for='project in ProjectsData' :key='project.id'> -->
           <a :class='Tag + TagGradient' :href='project.URL' target='_blank'>{{project.Title}} →</a>
           <div :class='Info'>
             <!-- <img :class='Icon' :src='apiUrl + project.Icon[0].url' :alt='project.Icon[0].alternativeText' /> -->

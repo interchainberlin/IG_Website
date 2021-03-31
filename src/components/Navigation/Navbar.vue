@@ -23,6 +23,9 @@ import { defineComponent } from '@vue/composition-api';
 import Menu from './Menu.vue';
 import ICFBanner from '../Banners/ICFBanner.vue';
 
+const showMenu = true;
+const tablet = window.matchMedia('(max-width: 900px)');
+
 export default defineComponent({
   name: 'Navbar',
   components: {
@@ -48,5 +51,9 @@ export default defineComponent({
       desktop: window.innerWidth <= Infinity,
     }
   },
+  // computed: {
+  //   showMenu: showMenu,
+  //   tablet: tablet,
+  // },
 })
 </script>
