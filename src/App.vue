@@ -2,12 +2,12 @@
   <div :class='App'>
     <Navbar />
     <div :class='AppContainer'>
-      <Banner :projects='projects' />
+      <Banner :projects='projects' :contributions='contributions'/>
       <Updates :articles='articles'/>
       <About />
-      <Projects :projects='projects' />
+      <Projects :projects='projects' :contributions='contributions'/>
       <OpenPositions :jobs='jobs' />
-      <Team :teams='teams' />
+      <Team :teamMembers='teamMembers' :teamLists='teamLists'/>
     </div>
     <Footer />
   </div>
@@ -44,9 +44,11 @@ export default defineComponent({
       AppContainer: 'xl:container xl:mx-auto p-5',
 
       VUE_APP_API_URL: process.env.VUE_APP_API_URL,
-      projects: [], 
+      contributions: [],
       jobs: [],
-      teams: [],
+      projects: [], 
+      teamLists: [],
+      teamMembers: [],
       articles: [],
       error: 'value not found',
       
@@ -54,14 +56,20 @@ export default defineComponent({
   },
   async mounted () {
     try {
-      const getProjects = await axios.get(`${this.VUE_APP_API_URL}/projects`)
-      this.projects = getProjects.data
+      const getContributions = await axios.get(`${this.VUE_APP_API_URL}/contributions`)
+      this.contributions = getContributions.data
 
       const getJobs = await axios.get(`${this.VUE_APP_API_URL}/jobs`)
       this.jobs = getJobs.data
 
-      const getTeams = await axios.get(`${this.VUE_APP_API_URL}/teams`)
-      this.teams = getTeams.data
+      const getProjects = await axios.get(`${this.VUE_APP_API_URL}/projects`)
+      this.projects = getProjects.data
+
+      const getTeamLists = await axios.get(`${this.VUE_APP_API_URL}/teamLists`)
+      this.teamLists = getTeamLists.data
+
+      const getTeamMembers = await axios.get(`${this.VUE_APP_API_URL}/teamMembers`)
+      this.teamMembers = getTeamMembers.data
 
       const getArticles = await axios.get(`${this.VUE_APP_API_URL}/articles`)
       this.articles = getArticles.data

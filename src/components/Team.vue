@@ -5,34 +5,33 @@
      <br/>
      <!-- Map through teams from teams API -->
       <div :class='TeamList'>
-        <div :class='Card' v-for='team in teams' :key='team.id'> 
-        <!-- <div :class='Card' v-for='team in TeamsData' :key='team.id'> -->
-          <!-- <img :class='Profile' :src='apiUrl + team.Profile[0].url'> -->
-          <img :class='Profile' :src='team.ProfileURL'/>
+        <div :class='Card' v-for='teamMember in teamMembers' :key='teamMember.id'> 
+          
+          <!-- <div :class='Card' v-for='teamMemberProfile in teamMember.Profile' :key='teamMemberProfile.id'> 
+            <img :class='Profile' :src='teamMemberProfile.url'/>
+          </div> -->
+          <img :class='Profile' :src='teamMember.ProfileURL'/>
+
           <div :class='Info'>
-            <p :class='body1'>{{team.FirstName}} {{team.LastName}}</p>
-            <p :class='body2'>{{team.Role}}</p>
+            <p :class='body1'>{{teamMember.FirstName}} {{teamMember.LastName}}</p>
+            <p :class='body2'>{{teamMember.Role}}</p>
           </div>
         </div>
       </div>
-
-     <!-- <button>Join our Team →</button> -->
   </div>
 </template>
 
 <script>
 import { defineComponent } from '@vue/composition-api';
-import { TeamsData } from '../data/TeamsData.js';
 
 export default defineComponent({
   name: 'Team',
   props: {
-    teams: Object,
+    teamMembers: Object,
+    teamLists: Object,
   },
   data() {
     return {
-      TeamsData: TeamsData, 
-
       TeamContainer: 'p-2 flex flex-col flex-wrap my-40 ',
       TeamList: 'grid grid-cols-2 md:grid-cols-3 gap-10 my-10 ',
       Card: 'hover:border hover:border-solid-blue flex flex-wrap space-y-5 md:space-y-0',

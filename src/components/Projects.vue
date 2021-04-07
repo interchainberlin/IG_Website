@@ -3,10 +3,9 @@
     <h3 :class='subheader'> Maintained Projects </h3>
      <hr/>
      <br/>
-    <!-- Map through projects from projects API -->
+    <!-- Map through projects from API -->
       <div :class='ProjectList'>
         <div :class='Card' v-for='project in projects' :key='project.id'>
-        <!-- <div :class='Card' v-for='project in ProjectsData' :key='project.id'> -->
           <a :class='Tag + TagGradient' :href='project.URL' target='_blank'>{{project.Title}} →</a>
           <div :class='Info'>
             <!-- <img :class='Icon' :src='apiUrl + project.Icon[0].url' :alt='project.Icon[0].alternativeText' /> -->
@@ -18,30 +17,30 @@
                 <img :class='Icon' src='../assets/Github.png'/>
               </a>
             </div>
-            <!-- <p :class='body2'>{{project.Description}}</p> -->
             <div v-html='project.Description'></div>
           </div>
         </div>
       </div>
   </div>
+
   <div :class='ProjectsContainer'>
-    <h3 :class='subheader'> Contribution Projects </h3>
+    <h3 :class='subheader'> We Contribute To </h3>
      <hr/>
      <br/>
-
+    <!-- Map through contributions from API -->
       <div :class='ProjectList'>
-        <div :class='Card' v-for='project in ProjectsDataContribute' :key='project.id'>
-          <a :class='Tag + TagGradient' :href='project.URL' target='_blank'>{{project.Title}} →</a>
+        <div :class='Card' v-for='contribution in contributions' :key='contribution.id'>
+          <a :class='Tag + TagGradient' :href='contribution.URL' target='_blank'>{{contribution.Title}} →</a>
           <div :class='Info'>
             <div :class='Icons'>
-              <a :class='link' :href='project.URL' target='_blank'>
-                <img :class='Icon' :src='project.IconURL'/>
+              <a :class='link' :href='contribution.URL' target='_blank'>
+                <img :class='Icon' :src='contribution.IconURL'/>
               </a>
-              <a :href='project.GithubURL' target='_blank'>
+              <a :href='contribution.GithubURL' target='_blank'>
                 <img :class='Icon' src='../assets/Github.png'/>
               </a>
             </div>
-            <div v-html='project.Description'></div>
+            <div v-html='contribution.Description'></div>
           </div>
         </div>
       </div>
@@ -50,18 +49,15 @@
 
 <script>
 import { defineComponent } from '@vue/composition-api';
-import { ProjectsData, ProjectsDataContribute } from '../data/ProjectsData.js'; 
 
 export default defineComponent({
   name: 'Projects',
   props: {
     projects: Object,
+    contributions: Object,
   },
   data () {
     return {
-      ProjectsData: ProjectsData,
-      ProjectsDataContribute: ProjectsDataContribute,
-
       ProjectsContainer: 'p-2 flex flex-col flex-wrap my-40 space-y-5',
       ProjectList: 'grid grid-cols-1 md:grid-cols-2 gap-10 my-10 ...',
       Card: 'bg-gray-100 flex flex-col flex-wrap',

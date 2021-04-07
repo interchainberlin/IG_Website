@@ -7,9 +7,8 @@
 
         <p>We are the maintainers of — </p>
         <div :class='BannerProject'>
-          <!-- Map through projects from projects API --> 
+          <!-- Map through projects from API --> 
           <div v-for='project in projects' :key='project.id'>
-          <!-- <div :class='ProjectLinks' v-for='project in ProjectsData' :key='project.id'> -->
             <a :class='link' :href='project.URL' target='_blank'>
               <img :class='Icon' :src='project.IconURL'/>
               <p>{{project.Title}}</p>
@@ -19,12 +18,14 @@
             <hr/>
           </div>
         </div>
+
         <p>We are contributors to — </p>
         <div :class='BannerProject'>
-          <div :class='ProjectLinks' v-for='project in ProjectsDataContribute' :key='project.id'>
-            <a :class='link' :href='project.URL' target='_blank'>
-              <img :class='Icon' :src='project.IconURL'/>
-              <p>{{project.Title}}</p>
+          <!-- Map through contributions from API -->
+          <div :class='ProjectLinks' v-for='contribution in contributions' :key='contribution.id'>
+            <a :class='link' :href='contribution.URL' target='_blank'>
+              <img :class='Icon' :src='contribution.IconURL'/>
+              <p>{{contribution.Title}}</p>
             </a>
             <br/>
             <hr/>
@@ -39,18 +40,15 @@
 
 <script>
 import { defineComponent } from '@vue/composition-api';
-import { ProjectsData, ProjectsDataContribute } from '../../data/ProjectsData.js';
 
 export default defineComponent({
   name: 'Banner',
   props: {
     projects: Object,
+    contributions: Object,
   },
   data() {
     return {
-      ProjectsData: ProjectsData,
-      ProjectsDataContribute: ProjectsDataContribute,
-
       BannerContainer: 'h-full items-center my-20 md:mt-72 md:mb-44 ',
       ContainerMobile: 'flex flex-col flex-wrap space-y-3 ',
       ContainerWeb: 'md:flex-row md:justify-between md:items-center md:pb-32',
